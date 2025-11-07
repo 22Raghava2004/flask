@@ -1,0 +1,14 @@
+<h2>Movie List</h2>
+
+{% for img in movie_list %}
+    <div style="text-align: center; margin: 20px; display: inline-block;">
+        
+        <a href="{{ url_for('two') }}">
+            <img src="{{ url_for('static', filename=img) }}" width="200" style="display: block;">
+        </a>
+        
+        <!-- ✅ Movie name shown below image -->
+        <p>{{ img.rsplit('.', 1)[0] }}</p>
+
+    </div>
+{% endfor %}
